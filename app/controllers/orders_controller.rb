@@ -2,6 +2,8 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    @items = LineItem.where("order_id = ?", params[@order.id])
+    @products = 
   end
 
   def create
@@ -51,9 +53,12 @@ class OrdersController < ApplicationController
         item_price: product.price,
         total_price: product.price * quantity
       )
+      
+      
     end
     order.save!
     order
+    # byebug
   end
 
 end

@@ -24,7 +24,27 @@
           <dd><%= @product.price %></dd>
         </dl>
       </div>
+      
+      <div class="col-sm-8">
+        <dl class="dl-horizontal">
+        <h2 class="reviews">Reviews</h2>
+          <% if @reviews.empty? %>
+          <dd>There are currently no reviews for this product.</dd>
+          <% else %>
+          <dt>Reviewer</dt>
+          <% @reviews.each do |review| %>
+          <dd><%= review.user.first_name%>
+          <dt>Rating</dt>
+          <dd><%= review.rating%>
+          <dt>Description</dt>
+          <dd><%= review.description%>
+          <% end %>
+          <% end %>
+        </dl>
+      </div>
     </div>
+
+
 
   </article>
 

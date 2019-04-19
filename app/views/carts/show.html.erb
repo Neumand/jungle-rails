@@ -4,6 +4,16 @@
     <h1>My Cart</h1>
   </header>
 
+  <% if cart.count == 0 %>
+    <div class="row justify-content-center">
+    <h4>Oops, your cart is empty!</h4>
+    <div>
+    <img src="https://cdn.dribbble.com/users/1244867/screenshots/4346888/empty_cart_teaser.jpg">
+    </div>
+  <%= link_to "Back to Products", root_path, class: 'btn btn-lg btn-primary' %>
+  </div>
+  <% else %>
+
   <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
@@ -48,5 +58,7 @@
       <% end %>
     </div>
   </div>
+
+  <% end %>
 
 </section>

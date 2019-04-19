@@ -132,5 +132,54 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+puts "Creating users..."
+
+User.destroy_all
+
+users.create({
+  first_name: 'Jimmy'
+  last_name: 'Papadoulos'
+  email: 'jp@papa.com'
+  password_digest: 'gr33km@n'
+})
+
+users.create({
+  first_name: 'Sandy'
+  last_name: 'Dawkins'
+  email: 'sdawkins@castle.ca'
+  password_digest: 'p@ssw0rd'
+})
+
+puts "Creating pre-existing reviews..."
+
+Review.destroy_all
+
+reviews.create!({
+  product_id: 1
+  user_id: 1
+  description: "Truly the most classy shirt I have ever bought!"
+  rating: 5
+})
+
+reviews.create!({
+  product_id: 7
+  user_id: 1
+  description: "I have used more modern skateboards...these suck!"
+  rating: 2
+})
+
+reviews.create!({
+  product_id: 12
+  user_id: 2
+  description: "Great - perfect for my Game of Thrones collection."
+  rating: 4
+})
+
+reviews.create!({
+  product_id: 9
+  user_id: 2
+  description: "Very nice, although a little pricey. Apple has cheaper ones."
+  rating: 3
+})
 
 puts "DONE!"

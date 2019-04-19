@@ -1,0 +1,19 @@
+<tr>
+  <td>
+    <%= image_tag item.image.tiny %>
+  </td>
+  <td>
+    <h4><%= item.name %></h4>
+    <br>
+    <p><%= item.description %></p>
+  </td>
+  <td>
+    <%= item.price_cents / 100.0 %>
+  </td>
+  <td>
+    <%= item.quantity %>
+  </td>
+  <td>
+    <%= (item.price_cents / 100.0) * item.quantity %>
+  </td>
+</tr>

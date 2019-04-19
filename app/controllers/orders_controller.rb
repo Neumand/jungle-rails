@@ -2,6 +2,7 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    @items = LineItem.where(order_id: @order.id)
   end
 
   def create
@@ -30,7 +31,7 @@ class OrdersController < ApplicationController
     Stripe::Charge.create(
       source:      params[:stripeToken],
       amount:      cart_subtotal_cents,
-      description: "Khurram Virani's Jungle Order",
+      description: "#{@current_user.first_name}'s Jungle Order",
       currency:    'cad'
     )
   end
@@ -51,6 +52,8 @@ class OrdersController < ApplicationController
         item_price: product.price,
         total_price: product.price * quantity
       )
+      
+      
     end
     order.save!
     order

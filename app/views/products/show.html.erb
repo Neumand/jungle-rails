@@ -26,14 +26,12 @@
       </div>
 
         <%= form_for [@product, @review] do |form| %>
-          <%= form.fields_for :review do |f| %>
-            <%= f.label :description %>
-            <%= f.text_area :description %>
-            <%= f.label :rating %>
-            <%= f.select :rating, options_for_select([1,2,3,4,5]) %>
-            <%= f.submit "New Review" %>
+            <%= form.label :description %>
+            <%= form.text_area :description %>
+            <%= form.label :rating %>
+            <%= form.select :rating, options_for_select([1,2,3,4,5]) %>
+            <%= form.submit "New Review" %>
             <% end %>
-        <% end %>
       
       <div class="col-sm-8">
         <dl class="dl-horizontal">

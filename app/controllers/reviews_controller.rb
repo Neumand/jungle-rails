@@ -4,13 +4,19 @@ class ReviewsController < ApplicationController
     description = params[:review][:description]
     rating = params[:review][:rating].to_i
     product_id = params[:product_id]
-    Review.create!({
+    review = Review.new({
       product_id: product_id,
       user_id: current_user.id,
       description: description,
       rating: rating,
     })
-    redirect_to :back
+
+    if review.save
+      review.save
+      redirect_to :back
+    else
+      redirect_to :back
+    end
   end
 
 end

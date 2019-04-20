@@ -28,6 +28,8 @@
       <div class="col-sm-8">
         <dl class="dl-horizontal">
         <h2 class="reviews">Reviews</h2>
+
+        <% if current_user %>
         <%= form_for [@product, @review] do |form| %>
           <div class="form-group">
             <%= form.label :description %>
@@ -39,6 +41,8 @@
           </div>
             <%= form.submit "New Review" %>
             <% end %>
+          <% end %>
+
           <% if @reviews.empty? %>
           <dd>There are currently no reviews for this product.</dd>
           <% else %>

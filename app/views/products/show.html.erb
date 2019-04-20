@@ -39,7 +39,7 @@
             <%= form.label :rating %>
             <%= form.select :rating, options_for_select([1,2,3,4,5]), class: 'form-control' %>
           </div>
-            <%= form.submit "New Review" %>
+            <%= form.submit "New Review", class: 'btn btn-primary' %>
             <% end %>
           <% end %>
 
@@ -53,6 +53,11 @@
           <dd><%= review.rating%>
           <dt>Description</dt>
           <dd><%= review.description%>
+          <% if review.user.id == current_user.id %>
+          <dd><%= button_to 'Delete', [@product, review], class: 'btn btn-xs btn-danger',
+          method: :delete,
+          data: { confirm: 'Are you sure you wish to delete this review?'} %></dt>
+          <% end %>
           <p>--------------------------------------------------</p>
           <% end %>
           <% end %>

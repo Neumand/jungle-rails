@@ -1,0 +1,6 @@
+user:
+  first_name: 'John'
+  last_name: 'Smith'
+  email: 'jsmith@example.com'
+  password: 'p@ssw0rd'
+  password_confirmation: 'p@ssw0rd'

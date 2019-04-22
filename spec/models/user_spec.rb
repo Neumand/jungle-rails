@@ -43,6 +43,28 @@ RSpec.describe User, type: :model do
       end
     end
 
+    context 'when performing password validation' do
+      it 'requires a password input' do
+        user.password = nil
+        user.valid?
+        expect(user.errors.full_messages).to include("Password can't be blank")
+      end
+
+      it 'should match the password confirmation' do
+        user.password_confirmation = 'password'
+        user.valid?
+        expect(user.errors.full_messages).to include("Password confirmation doesn't match Password")
+      end
+
+      it 'should exceed the minimum length' do
+        user.password = 'john'
+        user.valid?
+        expect(user.errors.full_messages).to include("Password is too short (minimum is 6 characters)")
+      end
+
+    end
+
+
 
   end
 

@@ -63,8 +63,18 @@ RSpec.describe User, type: :model do
       end
 
     end
+  end
 
+  describe '.authenticate_with_credentials' do
+    it 'creates a new user with correct credentials' do
+      check = user.authenticate('p@ssw0rd') ? user.email : nil
+      expect(check).to eql('jsmith@example.com')
+    end
 
+    it 'returns nil with incorrect credentials' do
+      check = user.authenticate('password') ? user.email : nil
+      expect(check).to be_nil
+    end
 
   end
 

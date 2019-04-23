@@ -50,6 +50,7 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'capybara-selenium'
   gem 'database_cleaner'
+  gem 'webdrivers', '~> 3.0' 
 end
 
 group :development do

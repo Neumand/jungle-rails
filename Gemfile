@@ -46,11 +46,14 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'rspec-rails', '~> 3.5'
   gem 'email_validator', '~> 1.6'
-  gem 'factory_bot_rails'
+  gem 'factory_bot_rails' 
+end
+
+group :test do
   gem 'shoulda-matchers'
-  gem 'capybara-selenium'
+  gem 'capybara'
   gem 'database_cleaner'
-  gem 'webdrivers', '~> 3.0' 
+  gem 'poltergeist'
 end
 
 group :development do

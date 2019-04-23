@@ -7,7 +7,8 @@ RSpec.feature "Visitor navigates to home page", type: :feature, js: true do
     visit root_path
 
     # DEBUG / VERIFY
-    save_screenshot
+    save_screenshot 'home-page.png'
+    expect(page).to have_text('Hi')
   end
 
 end

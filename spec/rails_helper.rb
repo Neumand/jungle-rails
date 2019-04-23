@@ -8,7 +8,7 @@ require 'rspec/rails'
 
 # Add additional requires below this line. Rails is not loaded until this point!
 require "capybara/rails"
-require "capybara/rspec"
+# require "capybara/rspec"
 require "capybara/poltergeist" # Add this line to require poltergeist
 
 # Specs flagged with `js: true` will use Capybara's JS driver. Set

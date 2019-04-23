@@ -47,6 +47,9 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem 'email_validator', '~> 1.6'
   gem 'factory_bot_rails'
+  gem 'shoulda-matchers'
+  gem 'capybara-selenium'
+  gem 'database_cleaner'
 end
 
 group :development do

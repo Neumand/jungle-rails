@@ -9,8 +9,6 @@ require 'capybara/rails'
 require 'capybara/rspec'
 require "capybara/poltergeist"
 
-end
-
 Capybara.javascript_driver = :poltergeist
 
 # Add additional requires below this line. Rails is not loaded until this point!
